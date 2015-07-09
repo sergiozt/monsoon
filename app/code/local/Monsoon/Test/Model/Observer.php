@@ -54,10 +54,10 @@ class Monsoon_Test_Model_Observer extends Mage_Catalog_Model_Observer
     /**
      * Check if click able enabled for category.
      *
-     * @param Varien_Data_Tree_Node $category
+     * @param Varien_Data_Tree_Node|Mage_Catalog_Model_Category $category
      * @return bool
      */
-    protected function _isCategoryClickAble(Varien_Data_Tree_Node $category)
+    protected function _isCategoryClickAble($category)
     {
         $isCategoryClickAbleStatus = true;
         $isCategoryClickAble = $category->getData(Monsoon_Test_Helper_Data::IS_CLICK_ABLE_LINK_CODE);
@@ -72,10 +72,10 @@ class Monsoon_Test_Model_Observer extends Mage_Catalog_Model_Observer
      * Get category url.
      * Return real url if is enabled as click able.
      *
-     * @param Varien_Data_Tree_Node $category
+     * @param Varien_Data_Tree_Node|Mage_Catalog_Model_Category $category
      * @return string
      */
-    protected function _categoryUrl(Varien_Data_Tree_Node $category)
+    protected function _categoryUrl($category)
     {
         $url = Monsoon_Test_Helper_Data::DISABLED_HREF_SYMBOL;
         if ($this->_isCategoryClickAble($category)) {
@@ -101,5 +101,12 @@ class Monsoon_Test_Model_Observer extends Mage_Catalog_Model_Observer
                 $element->setValue(Monsoon_Test_Helper_Data::DEFAULT_CLICK_ABLE_CODE);
             }
         }
+    }
+
+    public function catalogCategoryFlatLoadnodesBefore(Varien_Event_Observer $observer)
+    {
+        /** @var Zend_Db_Select $select */
+        $select = $observer->getData('select');
+        $select->columns(array(Monsoon_Test_Helper_Data::IS_CLICK_ABLE_LINK_CODE));
     }
 }

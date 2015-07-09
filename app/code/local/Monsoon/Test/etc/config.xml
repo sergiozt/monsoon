@@ -41,6 +41,14 @@
                     </catalog_add_topmenu_items>
                 </observers>
             </page_block_html_topmenu_gethtml_before>
+            <catalog_category_flat_loadnodes_before>
+                <observers>
+                    <catalog_add_flat_attributes>
+                        <class>monsoon_test/observer</class>
+                        <method>catalogCategoryFlatLoadnodesBefore</method>
+                    </catalog_add_flat_attributes>
+                </observers>
+            </catalog_category_flat_loadnodes_before>
         </events>
     </global>
     <frontend>

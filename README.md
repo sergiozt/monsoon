@@ -1,7 +1,7 @@
 Monsoon Test (magento module)
 ===========================
 
-Magento module to enable|disable clickable category menu item oin front.
+Magento module to enable|disable clickable category menu item on front.
 Instruction:
 
 1. Download the latest version of Magento Community Edition (ver 1.9.2.0  https://www.magentocommerce.com/download)

@@ -103,6 +103,12 @@ class Monsoon_Test_Model_Observer extends Mage_Catalog_Model_Observer
         }
     }
 
+    /**
+     * Add Is clickable attribute when
+     * using flat  for category.
+     *
+     * @param Varien_Event_Observer $observer
+     */
     public function catalogCategoryFlatLoadnodesBefore(Varien_Event_Observer $observer)
     {
         /** @var Zend_Db_Select $select */

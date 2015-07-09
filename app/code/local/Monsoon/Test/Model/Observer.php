@@ -84,4 +84,22 @@ class Monsoon_Test_Model_Observer extends Mage_Catalog_Model_Observer
 
         return $url;
     }
+
+    /**
+     * Set click able by default for
+     * already existed categories.
+     *
+     * @param Varien_Event_Observer $observer
+     */
+    public function addCatalogDefaultAttributeValue(Varien_Event_Observer $observer)
+    {
+        /** @var Varien_Data_Form $form */
+        $form = $observer->getEvent()->getForm();
+        if ($element = $form->getElement(Monsoon_Test_Helper_Data::IS_CLICK_ABLE_LINK_CODE)) {
+            $isClickAble = $element->getValue();
+            if ($isClickAble === null) {
+                $element->setValue(Monsoon_Test_Helper_Data::DEFAULT_CLICK_ABLE_CODE);
+            }
+        }
+    }
 }

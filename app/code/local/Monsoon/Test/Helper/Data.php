@@ -14,6 +14,11 @@ class Monsoon_Test_Helper_Data extends Mage_Core_Helper_Abstract
     const IS_CLICK_ABLE_LINK_CODE = 'is_click_able_link';
 
     /**
+     * Default value for already existed categories.
+     */
+    const DEFAULT_CLICK_ABLE_CODE = 1;
+
+    /**
      * Special char to set instead
      * real category url.
      */

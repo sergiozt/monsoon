@@ -22,7 +22,7 @@ $installer->addAttribute(Mage_Catalog_Model_Category::ENTITY, Monsoon_Test_Helpe
     'visible'      => true,
     'required'     => false,
     'user_defined' => false,
-    'default'      => 1,
+    'default'      => Monsoon_Test_Helper_Data::DEFAULT_CLICK_ABLE_CODE,
     'position'     => 100
 ));
 

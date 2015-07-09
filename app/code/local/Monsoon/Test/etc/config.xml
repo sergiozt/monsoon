@@ -25,6 +25,14 @@
             </monsoon_test_setup>
         </resources>
         <events>
+            <adminhtml_catalog_category_edit_prepare_form>
+                <observers>
+                    <monsoon_test_add_default_value>
+                        <class>monsoon_test/observer</class>
+                        <method>addCatalogDefaultAttributeValue</method>
+                    </monsoon_test_add_default_value>
+                </observers>
+            </adminhtml_catalog_category_edit_prepare_form>
             <page_block_html_topmenu_gethtml_before>
                 <observers>
                     <catalog_add_topmenu_items>
